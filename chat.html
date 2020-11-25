@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat Message</title>
+    <style>
+        body {
+            min-height: 2000px;
+        }
+        html {
+            background-image:url("pppp.jpg") ;
+        }    
+        .container {
+            color: black;
+			font-family: arial;
+			width: 500px;
+			border:2px solid #777;
+			background-color: #ddd;
+			line-height: 25px;
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="box" style="width: 100%; stroke: blue;">
+    <form method="REQUEST" onsubmit="return send();">
+        <input id="inp" type="text" name="inp">
+        <button type="submit" onclick="return send();">Send Massage</button>
+    </form>
+</body>
+<script type="text/javascript">
+    function send() {
+        let pesan = document.getElementById("inp").value;
+        document.getElementById("box").innerHTML += pesan + "<br/>";
+        document.getElementById("inp").value = "";
+        return false;
+    }
+</script>
+</html>
